@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <label for="input-text">Enter text here:</label>
+    <input type="text" id="input-text" v-model="text"/>
+   
+    <Reverse :text="text"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Reverse from './components/Reverse.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Reverse
+  },
+  data(){
+    return {text:''}
   }
 }
 </script>
